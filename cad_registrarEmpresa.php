@@ -1,3 +1,11 @@
+<?php
+	require 'config.php';
+	require 'classes/Db.class.php';
+	
+	/* criando objeto da classe DB*/
+	$banco = new DB();
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -74,13 +82,26 @@
 									Email:<input type="email" name="emailEmpresa">
 									Site:<input type="text" name="siteEmpresa">
 									
+									Continente
+									<select id="Continente" name="Continente">
+										<option value="">Selecione o Continente</option>
+										<?php
+											$continente = $banco->query('select * from continente');
+											foreach($continente as $c){
+												echo '<option value="'.$c['ds_continente'].'">'.$c['ds_continente'].'</option>';
+											}
+										?>
+									</select>
+									
 									Estado  
-									<select id="cidade" name="cidade">
-										<option value="nenhum">Selecione o Estado</option>
-										<option value="santaCatarina">Santa Catarina</option>
-										<option value="parana">Parana</option>
-										<option value="rio">Rio de Janeiro</option>
-										<option value="sp">São Paulo</option>
+									<select id="Estado" name="Estado">
+										<option value="">Selecione o Estado</option>
+										<?php
+											$estado = $banco->query('select ds_estado from estado');
+											foreach($continente as $c){
+												echo '<option value="'.$c['ds_estado'].'">'.$c['ds_estado'].'</option>';
+											}
+										?>
 									</select>
 									Cidade  
 									<select id="cidade" name="cidade">
