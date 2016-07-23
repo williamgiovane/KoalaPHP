@@ -57,7 +57,7 @@
 			<!-- Main -->
 				<div class="wrapper style1">
 					<div class="container">
-						<h2>Digite seus dados:</a></h2>
+						<h2>Digite seus dados:</a></h2></br>
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
