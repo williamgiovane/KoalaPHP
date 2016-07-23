@@ -1,0 +1,404 @@
+===Base de Dados koaladb
+
+== Estrutura da tabela cidade
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_cidade**//|int(11)|Não|
+|ds_cidade|varchar(65)|Não|
+|ESTADO_id_estado|int(11)|Não|
+== Extraindo dados da tabela cidade
+
+== Estrutura da tabela comentario
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_comentario**//|int(11)|Não|
+|ds_comentario|varchar(500)|Não|
+|ESTABELECIMENTO_id_estabelecimento|int(11)|Sim|NULL
+|ENTRETENIMENTO_id_entretenimento|int(11)|Sim|NULL
+|USUARIO_id_usuario|int(11)|Não|
+|EVENTO_id_evento|int(11)|Sim|NULL
+== Extraindo dados da tabela comentario
+
+== Estrutura da tabela continente
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_continente**//|int(11)|Não|
+|ds_continente|varchar(75)|Não|
+== Extraindo dados da tabela continente
+
+|1|América
+|2|Africa
+|3|Europa
+|4|Ásia
+|5|Oceania
+|6|Eurásia
+== Estrutura da tabela dia_semana
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_dia_semana**//|int(11)|Não|
+|ds_dia_semana|varchar(45)|Não|
+|horario_inicio|time|Não|
+|horario_fim|time|Não|
+== Extraindo dados da tabela dia_semana
+
+== Estrutura da tabela entretenimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_entretenimento**//|int(11)|Não|
+|ds_entretenimento|varchar(45)|Não|
+|vl_entrada|decimal(15,2)|Sim|NULL
+|vl_meia_entrada|decimal(15,2)|Sim|NULL
+|about|varchar(500)|Não|
+|cep|decimal(10,0)|Não|
+|telefone|decimal(10,0)|Sim|NULL
+|foto|longblob|Sim|NULL
+|classificacao|decimal(1,1)|Sim|NULL
+|site|varchar(75)|Sim|NULL
+== Extraindo dados da tabela entretenimento
+
+== Estrutura da tabela entretenimento_has_dia_semana
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ENTRETENIMENTO_id_entretenimento**//|int(11)|Não|
+|//**DIA_SEMANA_id_dia_semana**//|int(11)|Não|
+== Extraindo dados da tabela entretenimento_has_dia_semana
+
+== Estrutura da tabela entretenimento_has_tipo_entretenimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ENTRETENIMENTO_id_entretenimento**//|int(11)|Não|
+|//**TIPO_ENTRETENIMENTO_id_tipo_entretenimento**//|int(11)|Não|
+== Extraindo dados da tabela entretenimento_has_tipo_entretenimento
+
+== Estrutura da tabela estabelecimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_estabelecimento**//|int(11)|Não|
+|ds_estabelecimento|varchar(45)|Não|
+|cep|varchar(45)|Não|
+|about|varchar(500)|Não|
+|telefone|int(11)|Sim|NULL
+|email|varchar(45)|Sim|NULL
+|classificacao|decimal(1,1)|Sim|NULL
+|foto|longblob|Sim|NULL
+|CIDADE_id_cidade|int(11)|Não|
+== Extraindo dados da tabela estabelecimento
+
+== Estrutura da tabela estabelecimento_has_dia_semana
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ESTABELECIMENTO_id_estabelecimento**//|int(11)|Não|
+|//**DIAS_SEMANA_id_dia_semana**//|int(11)|Não|
+== Extraindo dados da tabela estabelecimento_has_dia_semana
+
+== Estrutura da tabela estabelecimento_has_tipo_estabelecimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ESTABELECIMENTO_id_estabelecimento**//|int(11)|Não|
+|//**TIPO_ESTABELECIMENTO_id_tipo_estabelecimento**//|int(11)|Não|
+== Extraindo dados da tabela estabelecimento_has_tipo_estabelecimento
+
+== Estrutura da tabela estado
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_estado**//|int(11)|Não|
+|ds_estado|varchar(75)|Não|
+|capital|varchar(65)|Não|
+|PAIS_id_pais|int(11)|Não|
+== Extraindo dados da tabela estado
+
+== Estrutura da tabela evento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_evento**//|int(11)|Não|
+|ds_evento|varchar(75)|Não|
+|dt_inicio|date|Não|
+|dt_fim|date|Não|
+|cep|decimal(10,0)|Não|
+|ds_local_evento|varchar(75)|Não|
+|horario_inicio|time|Não|
+|horario_fim|time|Não|
+|vl_entrada|decimal(15,2)|Sim|NULL
+|vl_meia_entrada|decimal(15,2)|Sim|NULL
+|site|varchar(65)|Sim|NULL
+|about|varchar(500)|Não|
+|telefone|decimal(15,0)|Sim|NULL
+|foto|longblob|Sim|NULL
+== Extraindo dados da tabela evento
+
+== Estrutura da tabela evento_has_tipo_evento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**EVENTO_id_evento**//|int(11)|Não|
+|//**TIPO_EVENTO_id_tipo_evento**//|int(11)|Não|
+== Extraindo dados da tabela evento_has_tipo_evento
+
+== Estrutura da tabela idioma
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_idioma**//|int(11)|Não|
+|ds_idioma|varchar(75)|Não|
+== Extraindo dados da tabela idioma
+
+|1|Africâner
+|2|Albanês
+|3|Alemão
+|4|Árabe
+|5|Catalão
+|6|Chinês Mandarim
+|7|Coreano
+|8|Croata
+|9|Curdo
+|10|Dinamarquês
+|11|Eslovaco
+|12|Espanhol
+|13|Finlandês
+|14|Francês
+|15|Grego
+|16|Hebreu
+|18|Holandês
+|19|Húngaro
+|20|Inglês
+|21|Irlandês
+|22|Italiano
+|23|Japonês
+|24|Latim
+|25|Mandarim
+|26|Norueguês
+|27|Persa
+|28|Polonês
+|29|Português
+|30|Romeno
+|31|Russo
+|32|Sérvio
+|33|Somali
+|34|Sueco
+|35|Turco
+|36|Ucraniano
+== Estrutura da tabela moeda
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_moeda**//|int(11)|Não|
+|ds_moeda|varchar(45)|Não|
+== Extraindo dados da tabela moeda
+
+|1|Real
+|2|Dólar Americano
+|3|Euro
+|4|Libra Esterlina
+|5|Iene
+|6|Peso Argentino
+|7|Peso Chileno
+|8|Peso Mexicano
+|9|Afegane
+|10|Rand
+|11|Riyal
+|12|Dólar Australiano
+|13|Boliviano
+|14|Dólar Canadense
+|15|Renminbi
+|16|Won Norte-Coreano
+|17|Won Sul-Coreano
+|18|Coroa Dinamarquesa
+|19|Libra Egípcia
+|20|Dirham dos Emirados Árabes Unidos
+|21|Florim Húngaro
+|22|Rupia Indiana
+|23|Coroa Islandesa
+|24|Novo Shekel Israelense
+|25|Coroa Norueguesa
+|26|Dólar Neozelandês
+|27|Guarani
+|28|Novo Sol
+|29|Złoty
+|30|Rublo Russo
+|31|Coroa Sueca
+|32|Franco Suíço
+== Estrutura da tabela pais
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_pais**//|int(11)|Não|
+|ds_pais|varchar(45)|Não|
+|MOEDA_id_moeda|int(11)|Não|
+|CONTINENTE_id_continente|int(11)|Não|
+|capital|varchar(65)|Não|
+== Extraindo dados da tabela pais
+
+|1|Afeganistão|9|2|Cabul
+|2|África do Sul|10|2|Pretória, Cidade do Cabo, Bloemfontein
+|3|Alemanha|3|3|Berlim
+|4|Arábia Saudita|11|4|Riade
+|5|Argentina|6|1|Buenos Aires
+|6|Austrália|12|5|Camberra
+|7|Áustria|3|3| 
+|8|Bélgica|3|3|Bruxelas
+|9|Bolívia|13|1|Sucre
+|10|Brasil|1|1|Brasília
+|11|Canadá|14|1|Ottawa
+|12|Chile|7|1|Santiago
+|13|China|15|4|Běijīng
+|14|Coreia do Norte|16|4|P'yŏngyang
+
+|15|Coreia do Sul|17|4|Seoul
+|16|Dinamarca|18|3|København
+|17|Egito|19|2|Al-Qāhirah
+|18|Emirados Árabes Unidos|20|4|‘Abū ẓabī
+|19|Equador|2|1|Quito
+|20|Eslováquia|3|3|Bratislava
+|21|Eslovénia|3|3|Ljubljana
+|22|Espanha|3|3|Madrid
+|23|Estados Unidos da América|2|1|Washington, D.C.
+|24|Finlândia|3|3|Helsinki
+|25|França|3|3|Paris
+|26|Grécia|3|3|Athinai
+|27|Hungria|21|3|Budapest
+|28|Índia|22|4|Nôtun Dilli
+|29|Irlanda|3|3|Dublin
+|30|Islândia|23|3|Reykjavík
+|31|Israel|24|4|Yerushalayim
+|32|Itália|3|3|Roma
+|33|Japão|5|4|Tōkyō
+|34|Luxemburgo|3|3|Lëtzebuerg
+|35|México|8|1|Ciudad de México
+|36|Noruega|25|3|Oslo
+|37|Nova Zelândia|26|5|Wellington
+|38|Paraguai|27|1|Asunción
+|39|Peru|28|1|Lima
+|40|Polônia|29|3|Warszawa
+|41|Portugal|3|3|Lisboa
+|42|Inglaterra|4|3|London
+|43|Rússia|30|6|Moskva
+|44|Suécia|31|3|Stockholm
+|45|Suíça|32|3|Bern
+== Estrutura da tabela pais_has_idioma
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**PAIS_id_pais**//|int(11)|Não|
+|//**IDIOMA_id_idioma**//|int(11)|Não|
+== Extraindo dados da tabela pais_has_idioma
+
+== Estrutura da tabela rota
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_rota**//|int(11)|Não|
+|ds_rota|varchar(45)|Não|
+|dt_inicio|date|Não|
+|dt_fim|date|Não|
+|USUARIO_id_usuario|int(11)|Não|
+== Extraindo dados da tabela rota
+
+== Estrutura da tabela rota_has_cidade
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ROTA_id_rota**//|int(11)|Não|
+|//**CIDADE_id_cidade**//|int(11)|Não|
+== Extraindo dados da tabela rota_has_cidade
+
+== Estrutura da tabela rota_has_estabelecimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ROTA_id_rota**//|int(11)|Não|
+|//**ESTABELECIMENTO_id_estabelecimento**//|int(11)|Não|
+== Extraindo dados da tabela rota_has_estabelecimento
+
+== Estrutura da tabela rota_has_estado
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**ROTA_id_rota**//|int(11)|Não|
+|//**ESTADO_id_estado**//|int(11)|Não|
+== Extraindo dados da tabela rota_has_estado
+
+== Estrutura da tabela tipo_entretenimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_tipo_entretenimento**//|int(11)|Não|
+|ds_tipo_entretenimento|varchar(75)|Não|
+== Extraindo dados da tabela tipo_entretenimento
+
+== Estrutura da tabela tipo_estabelecimento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_tipo_estabelecimento**//|int(11)|Não|
+|ds_tipo_estabelecimento|varchar(45)|Não|
+== Extraindo dados da tabela tipo_estabelecimento
+
+== Estrutura da tabela tipo_evento
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_tipo_evento**//|int(11)|Não|
+|ds_tipo_evento|varchar(45)|Não|
+== Extraindo dados da tabela tipo_evento
+
+== Estrutura da tabela tipo_usuario
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_tipo_usuario**//|int(11)|Não|
+|ds_tipo_usuario|varchar(45)|Não|
+== Extraindo dados da tabela tipo_usuario
+
+== Estrutura da tabela usuario
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**id_usuario**//|int(11)|Não|
+|nm_usuario|varchar(45)|Não|
+|email|varchar(45)|Não|
+|senha|varchar(45)|Não|
+|celular|int(11)|Não|
+|atualiza_celular|tinyint(1)|Sim|NULL
+|atualiza_email|tinyint(1)|Sim|NULL
+|TIPO_USUARIO_id_tipo_usuario|int(11)|Não|
+|foto|longblob|Sim|NULL
+== Extraindo dados da tabela usuario
+
