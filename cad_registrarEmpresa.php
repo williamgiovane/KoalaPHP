@@ -86,9 +86,21 @@
 									<select id="Continente" name="Continente">
 										<option value="">Selecione o Continente</option>
 										<?php
-											$continente = $banco->query('select * from continente');
+											$continente = $banco->query('select ds_continente from continente ORDER BY ds_continente');
+											$continenteDados = $banco->query('select id_continente from continente');
 											foreach($continente as $c){
 												echo '<option value="'.$c['ds_continente'].'">'.$c['ds_continente'].'</option>';
+											}
+										?>
+									</select>
+									
+									Pais
+									<select id="Pais" name="Pais">
+										<option value="">Selecione o Pais</option>
+										<?php
+											$continente = $banco->query('SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente = 1 ORDER BY ds_pais');
+											foreach($continente as $p){
+												echo '<option value="'.$p['ds_pais'].'">'.$p['ds_pais'].'</option>';
 											}
 										?>
 									</select>
@@ -97,19 +109,22 @@
 									<select id="Estado" name="Estado">
 										<option value="">Selecione o Estado</option>
 										<?php
-											$estado = $banco->query('select ds_estado from estado');
-											foreach($continente as $c){
-												echo '<option value="'.$c['ds_estado'].'">'.$c['ds_estado'].'</option>';
+											$estado = $banco->query('SELECT ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
+											foreach($estado as $e){
+												echo '<option value="'.$e['ds_estado'].'">'.$e['ds_estado'].'</option>';
 											}
 										?>
 									</select>
+									
 									Cidade  
-									<select id="cidade" name="cidade">
-										<option value="nenhum">Selecione a Cidade</option>
-										<option value="Blumenau">Blumenau</option>
-										<option value="Indaial">Indaial</option>
-										<option value="Ilhota">Ilhota</option>
-										<option value="Gaspar">Gaspar</option>
+									<select id="Cidade" name="Cidade">
+										<option value="">Selecione o Cidade</option>
+										<?php
+											$cidade = $banco->query('SELECT ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
+											foreach($cidade as $c){
+												echo '<option value="'.$c['ds_cidade'].'">'.$c['ds_cidade'].'</option>';
+											}
+										?>
 									</select>
 									
 									Celular:<input type="text" name="celularUsu">
